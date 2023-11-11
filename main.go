@@ -5,6 +5,7 @@ import (
 	"html/template"
 	"net/http"
 
+	"mikasanita.com/go/fm-museum/api"
 	"mikasanita.com/go/fm-museum/data"
 )
 
@@ -28,6 +29,7 @@ func main() {
 
 	server.HandleFunc("/hello", handleHello) // passing a function to the http handler, not invoking it
 	server.HandleFunc("/templates", handleTemplate)
+	server.HandleFunc("/api/exhibitions", api.Get)
 
 	fs := http.FileServer(http.Dir("./public")) // create a file server, it automatically serves all files from public folder
 	server.Handle("/", fs)
