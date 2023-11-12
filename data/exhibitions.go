@@ -29,8 +29,8 @@ var list = []Exhibition{
 	},
 }
 
-func Add(e Exhibition) {
-	list = append(list, e)
+func Add(exhibition Exhibition) {
+	list = append(list, exhibition)
 }
 
 func GetAll() []Exhibition {
